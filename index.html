@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Time tracking dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-neutral-darkest-blue d-flex justify-content-center">
+  <!-- Applicatin container -->
+  <div id="app-container" class="container-md mx-1 d-flex">
+
+    <!-- Profile card -->
+    <div id="profile-card" class="container p-0">
+
+      <!-- Profile info -->
+      <div id="profile-info" class="d-flex bg-primary-blue">
+        <div id="profile-picture">
+          <img src="./images/image-jeremy.png" class="img-thumbnail" alt="John Doe Profile Picture">
+        </div>
+        <div id="profile-text" class="d-flex">
+          <p class="d-flex flex-column m-0">
+            <span class="fs-5 text-neutral-pale-blue">Report for</span>
+            <span id="profile-name" class="fs-3 text-white">John Doe</span>
+          </p>
+        </div>
+      </div>
+      <!-- Configuration options -->
+      <div id="configuration" class="btn-group bg-neutral-dark-blue" role="group" aria-label="Button group">
+        <button type="button" class="btn" data-value="Daily">Daily</button>
+        <button type="button" class="btn selected" data-value="Weekly">Weekly</button>
+        <button type="button" class="btn" data-value="Monthly">Monthly</button>
+      </div>
+    </div>
+
+    <!-- Card containers -->
+    <div id="card-container" class="container p-0">
+
+      <!-- Default card -->
+      <div class="nb-card">
+        <img src="./images/icon-work.svg" class="card-bg-icon" alt="card icon">
+        <div class="inner-card bg-neutral-dark-blue">
+          <div class="card-header d-flex flex-row">
+            <p class="card-title d-flex mx-1">Work</p>
+            <button class="btn card-btn d-flex">
+              <img src="./images/icon-ellipsis.svg" alt="elipsis icon" style="width: 1rem;">
+            </button>
+          </div>
+          <div class="card-content d-flex">
+            <p class="card-time m-0 p-0">32hrs</p>
+            <p class="card-extra-info m-0 p-0">
+              <span class="last-time mx-1">Last Week</span> - <span class="hours mx-1">36hrs</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add card -->
+      <div class="nb-card new-card d-flex flex-column">
+        <div class="inner-card bg-neutral-dark-blue">
+          <div class="card-header">
+            <p class="card-title">New entry</p>
+          </div>
+          <div class="card-content">
+            <button id="create-card-btn" class="btn d-flex">+</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script type="module" src="./assets/js/card.js"></script>
+  <script type="module" src="./assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Update Bootstrap */
+$custom-colors: (
+    /* primary */
+    "primary-blue": hsl(246, 80%, 60%),
+    "primary-soft-blue-play": hsl(195, 74%, 62%),
+
+    "primary-light-red-work": hsl(15, 100%, 70%),
+    "primary-light-red-study": hsl(348, 100%, 68%),
+
+    "primary-lime-green-exercise": hsl(145, 58%, 55%),
+    "primary-violet-social": hsl(264, 64%, 52%),
+    "primary-orange-care": hsl(43, 84%, 65%),
+
+    /* Secondary */
+    "neutral-darkest-blue": hsl(226, 43%, 10%),
+    "neutral-dark-blue": hsl(235, 46%, 20%),
+    "neutral-blue": hsl(235, 45%, 61%),
+    "neutral-pale-blue": hsl(236, 100%, 87%),
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+@each $color-name, $color-value in $custom-colors {
+    .bg-#{$color-name} {
+        background-color: $color-value;
+    }
+    .text-#{$color-name} {
+        color: $color-value;
+    }
+}
+
+
+
+/* Modify some default values */
+:root {
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 300;
+
+    /* variables */
+    --weigth1: 300,
+    --weigth2: 400,
+    --weigth3: 500
+}
+
+*, *::after, *::before {
+    font-family: "Rubik", sans-serif;
+    box-sizing: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/* Own styles */
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+#app-container {
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+    max-width: 400px;
+    margin: 4rem 0;
+
+    #profile-card {
+        width: 100%;
+
+        #profile-info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 1.5rem;
+            position: relative;
+            z-index: 10;
+            
+            #profile-picture {
+                width: 40%;
+
+                img {
+                    border-radius: 100%;
+                    width: 60%;
+                    margin: 20%;
+                }
+            }
+            
+            #profile-text {
+                width: 60%;
+            }
+        }
+
+        #configuration {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding: 3rem 0 1rem 0;
+            position: relative;
+            top: -2rem;
+            border-radius: 0 0 1.5rem 1.5rem;
+
+            .btn {
+                color: hsl(235, 45%, 61%) !important;
+                border: none;
+            }
+
+            .btn:hover {
+                color: hsl(236, 100%, 87%) !important;
+            }
+
+            .btn.selected, .btn:active, .btn:focus {
+                color: white !important;
+            }
+        }
+    }
+
+    #card-container {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        color: white;
+
+        .nb-card {
+            margin: 0 0 3rem 0;
+            background-color: hsl(15, 100%, 70%);
+            border-radius: 1rem;
+            position: relative;
+
+            .card-bg-icon {
+                position: absolute;
+                right: 5%;
+            }
+
+            .inner-card {
+                padding: 1rem 1rem;
+                margin-top: 1.5rem;
+                position: relative;
+                top: 1rem;
+                border-radius: 1rem;
+
+                .card-header {
+                    .card-title {
+                        width: 80%;
+                        font-weight: 500;
+                        color: white;
+                        align-items: end;
+                    }
+
+                    .card-btn {
+                        border: none;
+                        width: 20%;
+                        justify-content: flex-end;
+                    }
+                }
+
+                .card-content {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    width: 100%;
+
+                    .card-time {
+                        font-size: 2rem;
+                        color: white;
+                        width: 40%;
+                        font-weight: 300;
+                    }
+
+                    .card-extra-info {
+                        color: hsl(235, 45%, 61%);
+                        width: 60%;
+                        display: flex;
+                        justify-content: center; /* Horizontally center the content */
+                        align-items: center; /* Vertically center the content */
+                    }
+                }
+            }
+        }
+
+        .nb-card.new-card {
+            background-color: hsl(246, 80%, 60%);
+        }
+    }
+
+    #create-card-btn {
+        font-size: 2rem;
+        margin: none;
+        padding: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: hsl(235, 45%, 61%);
+        border: none;
+        transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease; 
+    }
+
+    #create-card-btn:hover {
+        color: white;
+    }
+
+    #create-card-btn:active {
+        transform: scale(0.75);
+    }
+}
+
+
+@media (min-width: 768px) {
+    #app-container {
+        flex-direction: row;
+        max-width: none;
+
+        #profile-card {
+            width: 30%;
+            min-width: 200px;
+            max-width: 250px;
+
+            #profile-info {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 3rem 1rem;
+
+                #profile-text {
+                    width: 100%;
+                }
+            }
+    
+            #configuration {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 1rem;
+            }
+        }
+    
+        #card-container {
+            margin-left: 1rem;
+            width: 70%;
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+
+            .nb-card {
+                min-width: 200px;
+
+                .inner-card {
+                    
+                    .card-content {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        padding-left: 0.2rem;
+                        .card-time {
+                            width: 100%;
+                        }
+    
+                        .card-extra-info {
+                            width: 100%;
+                            justify-content: start;
+                        }
+                    }
+                }
+            }
+            .nb-card.new-card {
+                height: 108px;
+
+                .inner-card .card-content {
+                    padding-bottom: 0.78rem; 
+                }
+            }
+        }
+    }
+}
