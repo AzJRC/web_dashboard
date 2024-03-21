@@ -11854,20 +11854,20 @@ textarea.form-control-lg {
   color: hsl(246, 80%, 60%);
 }
 
-.bg-primary-soft-blue-play {
-  background-color: hsl(195, 74%, 62%);
-}
-
-.text-primary-soft-blue-play {
-  color: hsl(195, 74%, 62%);
-}
-
 .bg-primary-light-red-work {
   background-color: hsl(15, 100%, 70%);
 }
 
 .text-primary-light-red-work {
   color: hsl(15, 100%, 70%);
+}
+
+.bg-primary-soft-blue-play {
+  background-color: hsl(195, 74%, 62%);
+}
+
+.text-primary-soft-blue-play {
+  color: hsl(195, 74%, 62%);
 }
 
 .bg-primary-light-red-study {
@@ -11967,6 +11967,7 @@ body {
 }
 #app-container #profile-card {
   width: 100%;
+  min-width: 310px;
 }
 #app-container #profile-card #profile-info {
   display: flex;
@@ -12012,10 +12013,10 @@ body {
   width: 100%;
   flex-direction: column;
   color: white;
+  min-width: 310px;
 }
 #app-container #card-container .nb-card {
   margin: 0 0 3rem 0;
-  background-color: hsl(15, 100%, 70%);
   border-radius: 1rem;
   position: relative;
 }
@@ -12114,6 +12115,7 @@ body {
   }
   #app-container #card-container .nb-card {
     min-width: 200px;
+    max-width: 250px;
   }
   #app-container #card-container .nb-card .inner-card .card-content {
     display: flex;

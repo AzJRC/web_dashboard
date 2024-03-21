@@ -1,15 +1,35 @@
 {
-  "main": "",
+  "main": "}assets/js/app.js",
   "scripts": {
-    "compile:sass": "sass --watch scss:assets/css"
+    "compile:sass": "sass --watch src/assets/scss:src/assets/css",
+    "start": "parcel src/index.html"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
     "autoprefixer": "^10.4.19",
     "bootstrap": "^5.3.3",
+    "motion": "^10.17.0",
     "postcss-cli": "^11.0.0"
   },
   "devDependencies": {
+    "parcel": "^2.12.0",
     "sass": "^1.72.0"
-  }
+  },
+  "name": "time-tracking-dashboard-main",
+  "description": "This is a Frontend mentor challenge to build a responsive and interactive dashboard. [Currently on progress]",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AzJRC/web_dashboard.git"
+  },
+  "keywords": [
+    "dashboard",
+    "webdevelopment"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AzJRC/web_dashboard/issues"
+  },
+  "homepage": "https://github.com/AzJRC/web_dashboard#readme"
 }
