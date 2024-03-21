@@ -3,8 +3,8 @@
 This is a Frontend mentor challenge to build a responsive and interactive dashboard.
 [Currently on progress]
 
-Current view (Desktop)
-![Desktop view: version 0.1](./design/results/screenshot-desktop-1.png)
+Desktop view
+![Desktop view: version 0.1](./screenshoots/screenshoot-desktop-2.png)
 
-Current view (Mobile)
-![Mobile view: version 0.1](./design/results/screenshot-mobile-1.png)
+Mobile view
+![Mobile view: version 0.1](./screenshoots/screenshoot-mobile-2.png)
