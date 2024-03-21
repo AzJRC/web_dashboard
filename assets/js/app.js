@@ -2,6 +2,7 @@ import createCard from './card.js';
 
 document.addEventListener("DOMContentLoaded", function() {
 
+    
     /* Select time-frame */
     document.querySelectorAll('#configuration .btn').forEach(btn => {
         btn.addEventListener('click', function() {
